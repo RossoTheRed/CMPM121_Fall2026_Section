@@ -17,8 +17,14 @@ document.body.innerHTML = `
 
 // Add click handler
 const button = document.getElementById("increment")!;
+const counterElement = document.getElementById("counter")!;
 
 button.addEventListener("click", () => {
   counter++;
+  let newText = ``;
+  for (let i = 0; i < counter; i++) {
+    newText = `${newText} Counter`;
+  }
+  counterElement.textContent = newText;
   button.textContent = `Click Me! ${counter}`;
 });
